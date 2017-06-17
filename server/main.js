@@ -27,9 +27,13 @@ app.get('/', (req, res) => {
   res.render('Home')
 })
 
+app.get('/ordinary-page', (req, res) => {
+  res.render('OrdinaryPage')
+})
+
 /**
  * Start server
  */
 app.listen(PORT, () => {
-    console.log(`Listening to port ${PORT}`)
+    console.info(`Listening to port ${PORT}`)
 })
