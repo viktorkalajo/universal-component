@@ -17,6 +17,7 @@ class UniversalComponent extends React.Component {
     return (
       <div>
         <div
+          className='universal-component'
           id={this.props.id}
           dangerouslySetInnerHTML={{
             __html: componentToString(
@@ -27,7 +28,7 @@ class UniversalComponent extends React.Component {
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.__data['${this.props.id}'] = ${jsonComponentProps}`
+            __html: `window.__data['${this.props.id}'] = {props: ${jsonComponentProps}, componentName: '${this.props.component.name}'}`
           }}
         />
       </div>
@@ -36,9 +37,9 @@ class UniversalComponent extends React.Component {
 }
 
 UniversalComponent.propTypes = {
-  id: PropTypes.string,
-  componentProps: PropTypes.object,
-  component: PropTypes.any // React component
+  id: PropTypes.string.isRequired,
+  componentProps: PropTypes.object.isRequired,
+  component: PropTypes.any.isRequired // React component
 }
 
 module.exports = UniversalComponent

@@ -15,6 +15,10 @@ class BaseLayout extends React.Component {
         </head>
         <body>
           <div className='container'>
+            <ul className='nav nav-tabs'>
+              <li role='presentation'><a href='/'>Universal components</a></li>
+              <li role='presentation'><a href='/ordinary-page'>Ordinary page</a></li>
+            </ul>
             {this.props.children}
           </div>
         </body>

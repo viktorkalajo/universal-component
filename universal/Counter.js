@@ -17,7 +17,7 @@ class Counter extends React.Component {
     }, 1000)
   }
 
-  resetTimer () {
+  resetCounter () {
     this.setState({
       counter: 0
     })
@@ -29,8 +29,8 @@ class Counter extends React.Component {
         <p className='lead'>
           {this.props.title}{this.state.counter}
         </p>
-        <button className='btn' onClick={() => this.resetTimer()}>
-          Reset timer
+        <button className='btn btn-primary' onClick={() => this.resetCounter()}>
+          Reset counter
         </button>
       </div>
     )
