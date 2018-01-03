@@ -1,6 +1,8 @@
 var React = require('react')
 var PropTypes = require('prop-types')
 
+var universal = require('./helpers/universal')
+
 class Incrementer extends React.Component {
   constructor (props) {
     super(props)
@@ -42,4 +44,4 @@ Incrementer.propTypes = {
   initalValue: PropTypes.number
 }
 
-module.exports = Incrementer
+module.exports = universal(Incrementer)

@@ -1,6 +1,8 @@
 var React = require('react')
 var PropTypes = require('prop-types')
 
+var universal = require('./helpers/universal')
+
 class Counter extends React.Component {
   constructor (props) {
     super(props)
@@ -41,4 +43,4 @@ Counter.propTypes = {
   title: PropTypes.string
 }
 
-module.exports = Counter
+module.exports = universal(Counter)

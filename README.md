@@ -18,11 +18,10 @@ The term [universal/isomorpic](https://medium.com/@mjackson/universal-javascript
 
 ## Adding a new universal component
 1. Create your component in the folder universal eg `universal/MyComponent.js`
-2. In your template file under server/views add the helper react component `UniversalComponent` like so: `<UniversalComponent id='my-component' component={MyComponent} componentProps={{some: 'props', foo: 'bar'}}`
+2. Wrap your component in the [HOC](https://reactjs.org/docs/higher-order-components.html) universal/helpers/universal.js.
 3. Register the component in client/components.js so that the client knows that it should render/mount it.
 
 
 ## Comments
 - In this example i use react/jsx as the server templating engine using [express-react-views](https://github.com/reactjs/express-react-views). You can easily use whatever templating language you want such as handlebars, jinja or whatever. However, using JSX is useful because it makes it very easy to convert a ordinary server rendered component to a universal component.
 - The code is splitted in three directories: client/, server/ and universal/. Code in client/ only runs in the browser, server/ on node and universal runs in both environments.
-

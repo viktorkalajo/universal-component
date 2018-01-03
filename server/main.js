@@ -6,14 +6,14 @@ var app = express()
 // Another option would be to transpile server-side as well as client side
 require('node-jsx').install()
 
-const PORT = 3000
+const PORT = 3002
 
 /**
  * Set JSX as our view engine. https://github.com/reactjs/express-react-views
  */
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'jsx')
-app.engine('jsx', require('express-react-views').createEngine())
+app.engine('jsx', require('express-react-views').createEngine({beautify: true}))
 
 /**
  * Serve static files
